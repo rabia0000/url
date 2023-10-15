@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>page</h1>
+
+   
+    <P for="">nom :<span id = 'spanLastName'></span> </P>
+    <P for="">age : <span id = 'spanAge'></span></P>
+    <P for="">adresse : <span id = 'spanAdresse'></span></P>
+    <P for="">tel : <span id = 'spanTel'></span></P>
+    
+
+    </div>
+    <div><a href="index.html">retour</a></div>
+    
+        
+        <script>
+           
+            
+    //     let test = window.location.search;
+       
+    //    let paramArray = (test.split('&')) 
+    //    //param1
+    //    let param1 = (test[0]);
+    //    let param2 = (test[1]);
+    //    console.log(param1);
+    //    console.log(param2);
+
+    //         console.log (paramArray[0].split('=')[1])
+    //         console.log (paramArray[1].split('=')[1])
+            
+
+    // recuperer les parametre URL a l'aide d'une api 
+
+    let params = new URLSearchParams(window.location.search) // permet de transformer en parametre les info 
+    //en url nom et age 
+    console.log(params) // pour un cree un objet on utilise new 
+
+    let lastNameValue = params.get('lastname') // get permet de récuperer les valeurs 
+    let ageValue = params.get('age');
+    let adresseValue = params.get('adresse')
+    let telValue = params.get('tel')
+    console.log(lastNameValue, ageValue, adresseValue, telValue)
+
+
+    // afficher dans le formulaire : 
+
+    let spanLastName = document.querySelector('#spanLastName');
+    spanLastName.innerHTML = lastNameValue; // on affiche les valeurs recuperer par get plus haut dans le html 
+
+   let spanAge = document.querySelector('#spanAge');
+   spanAge.innerHTML = ageValue; 
+    
+    
+    let spanAdresse = document.querySelector("#spanAdresse")
+    spanAdresse.innerHTML = adresseValue;
+    
+    let spanTel = document.querySelector('#spanTel')
+    spanTel.innerHTML = telValue;
+
+
+
+        
+        
+        </script>
+       
+</body>
+</html>
